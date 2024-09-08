@@ -22,6 +22,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import PaypalReturnPage from "./pages/shopping-view/paypal-return";
 import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from "./pages/shopping-view/search";
+import About from './pages/about';
+import Contact from './pages/contact';
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -35,7 +37,7 @@ function App() {
 
   // if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
 
-  console.log("loading",isLoading, user);
+  console.log("loading", isLoading, user);
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
@@ -73,6 +75,7 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="features" element={<AdminFeatures />} />
         </Route>
+
         <Route
           path="/shop"
           element={
@@ -89,6 +92,8 @@ function App() {
           <Route path="payment-success" element={<PaymentSuccessPage />} />
           <Route path="search" element={<SearchProducts />} />
         </Route>
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
